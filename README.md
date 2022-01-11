@@ -1,1 +1,2 @@
 # Face-Matrix
+The facemesh package infers approximate 3D facial surface geometry from an image or video stream, requiring only a single camera input without the need for a depth sensor. This geometry locates features such as the eyes, nose, and lips within the face, including details such as lip contours and the facial silhouette. This information can be used for downstream tasks such as expression classification.
