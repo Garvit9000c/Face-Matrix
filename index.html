@@ -75,14 +75,14 @@ let model, ctx, videoWidth, videoHeight, video, canvas,
 
 const VIDEO_SIZE = 500;
 const mobile = isMobile();
-const renderPointcloud = mobile === false;
+const renderPointcloud = true;//mobile === false;
 const state = {
   backend: 'wasm',
   maxFaces: 10,
   triangulateMesh: false
 };
 
-if (true) {
+if (renderPointcloud) {
   state.renderPointcloud = true;
 }
 
