@@ -9,10 +9,11 @@
   .canvas-wrapper, #scatter-gl-container {
     display: inline-block;
     vertical-align: top;
+    
   }
 
   #scatter-gl-container {
-    border: solid 1px black;
+    border: solid 0px black;
     position: relative;
   }
 
@@ -23,11 +24,20 @@
     top: 50%;
     position: absolute;
   }
+  
+  .container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  border: solid 10px black;
+}
+  
+  }
 </style>
 </head>
 <body>
   <div id="main">
-    <div class="container">
+    <div class="container" width='100%'>
       <div class="canvas-wrapper">
         <canvas id="output"></canvas>
         <video id="video" playsinline style="
@@ -141,11 +151,12 @@ async function renderPrediction() {
   if (predictions.length > 0) {
     predictions.forEach(prediction => {
       try {
-        document.getElementById('myDiv01').innerHTML += 'Confidence: ' + prediction.faceInViewConfidence.toFixed(4) + '<br>'
-        // console.log(prediction.faceInViewConfidence.toFixed(4))
+        //document.getElementById('myDiv01').innerHTML += 'Confidence: ' + prediction.faceInViewConfidence.toFixed(4) + '<br>'
+        console.log(prediction.faceInViewConfidence.toFixed(4))
       }
       catch(err){
-      document.getElementById('myDiv01').innerHTML = err.message;
+      //document.getElementById('myDiv01').innerHTML = err.message;
+      console.log(err.message)
       }
         
       const keypoints = prediction.scaledMesh;
@@ -198,7 +209,7 @@ async function renderPrediction() {
 
 async function main() {
   await tf.setBackend(state.backend);
-  setupDatGui();
+  //setupDatGui();
 
   //stats.showPanel(0);  // 0: fps, 1: ms, 2: mb, 3+: custom
 //  document.getElementById('main').appendChild(stats.dom);
