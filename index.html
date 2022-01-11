@@ -5,13 +5,17 @@
 <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/facemesh@0.0.3"></script>
 <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-backend-wasm@2.0.0/dist/tf-backend-wasm.js"></script>
 <script src="triangulation.js"></script>   
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster&effect=shadow-multiple">
 <style>
   .canvas-wrapper, #scatter-gl-container {
     display: inline-block;
     vertical-align: top;
     
   }
-
+  .w3-lobster {
+  font-family: "Lobster", Sans-serif;
+}
   #scatter-gl-container {
     border: solid 1px black;
     position: relative;
@@ -37,6 +41,9 @@
 </head>
 <body>
   <div id="main">
+    <div class="w3-container w3-lobster">
+  	<p class="w3-xlarge font-effect-shadow-multiple">Face-Matrix-9000!</p>
+    </div>
     <div class="container" width='100%'>
       <div class="canvas-wrapper">
         <canvas id="output"></canvas>
